@@ -208,22 +208,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/aapescsyforcode.github.io/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-categories">
           <a href="/aapescsyforcode.github.io/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/aapescsyforcode.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -356,16 +356,43 @@
       
         
           
-            <h3 id="gitpages创建"><a href="#gitpages创建" class="headerlink" title="gitpages创建"></a>gitpages创建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">打开github官网</div><div class="line">注册github账号</div><div class="line">建立Repository  PS:命名规范为</div><div class="line">	用户名.github.io</div><div class="line">打开所建项目点击Settings</div><div class="line">将Github Pages下面的Source选择为master branch 并点击Save</div></pre></td></tr></table></figure>
-<h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GitBash</div><div class="line">https://git-scm.com/downloads</div><div class="line">NodeJs</div><div class="line">https://nodejs.org/en/</div></pre></td></tr></table></figure>
-<h3 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h3><p>####检查现有ssh key：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">	打开命令行输入:</div><div class="line">	<span class="built_in">cd</span> ~/. ssh 检查本机的ssh密钥</div><div class="line">	如果提示：No such file or directory 说明你是第一次使用git。</div><div class="line">```	</div><div class="line"><span class="comment">####生成新的SSH Key：</span></div><div class="line">``` bash</div><div class="line">	 ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></div><div class="line">	效果如下:</div><div class="line">	Generating public/private rsa key pair.</div><div class="line">	Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</div><div class="line">	之后：</div><div class="line">	Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</div><div class="line">	Enter same passphrase again:&lt;再次输入加密串&gt;</div><div class="line">	PS：输入的时候在界面上不会显示*,此密码用作提交项目时输入</div></pre></td></tr></table></figure></p>
-<p>####添加SSH Key到github：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件</div><div class="line">如果看不到可以点开此电脑-&gt;查看-&gt;勾选隐藏项目</div><div class="line">此电脑-&gt;查看-&gt;选项-&gt;查看：显示隐藏文件</div><div class="line">取消隐藏受保护的文件</div><div class="line">右击Documents and Settings-&gt;属性-&gt;安全-&gt;高级-&gt;修改权限-&gt;勾选Everyone完全控制</div><div class="line"></div><div class="line">复制私人密钥到github系统中的Account Settings---&gt;SSH Public keys ---&gt; add another public keys key文本框中并点击Add Key</div></pre></td></tr></table></figure></p>
-<p>####测试<br>    命令行中输入ssh -T git@github.com<br>    输入yes以及用户名密码</p>
+            <h3 id="gitpages创建"><a href="#gitpages创建" class="headerlink" title="gitpages创建"></a>gitpages创建</h3><pre><code>打开github官网
+注册github账号
+建立Repository  PS:命名规范为
+    用户名.github.io
+打开所建项目点击Settings
+将Github Pages下面的Source选择为master branch 并点击Save
+</code></pre><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><pre><code>GitBash
+https://git-scm.com/downloads
+NodeJs
+https://nodejs.org/en/    
+</code></pre><h3 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h3><p>####检查现有ssh key：####</p>
+<pre><code>打开命令行输入:
+cd ~/. ssh 检查本机的ssh密钥
+如果提示：No such file or directory 说明你是第一次使用git。
+</code></pre><p>####生成新的SSH Key：####</p>
+<pre><code> ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;
+效果如下:
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;
+之后：
+Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;
+Enter same passphrase again:&lt;再次输入加密串&gt;
+PS：输入的时候在界面上不会显示*,此密码用作提交项目时输入
+</code></pre><p>####添加SSH Key到github：####</p>
+<pre><code>打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件
+如果看不到可以点开此电脑-&gt;查看-&gt;勾选隐藏项目
+此电脑-&gt;查看-&gt;选项-&gt;查看：显示隐藏文件
+取消隐藏受保护的文件
+右击Documents and Settings-&gt;属性-&gt;安全-&gt;高级-&gt;修改权限-&gt;勾选Everyone完全控制
+
+复制私人密钥到github系统中的Account Settings---&gt;SSH Public keys ---&gt; add another public keys key文本框中并点击Add Key
+</code></pre><p>####测试####<br>    命令行中输入ssh -T git@github.com<br>    输入yes以及用户名密码</p>
 <p>####设置用户信息<br>    git config –global user.name “cnfeat”//用户名,该名字是提交项目时记录的名字<br>    git config –global user.email  “cnfeat@gmail.com”//填写自己的邮箱<br>    PS:必须为英文，如果失败则输入 git init</p>
-<p>###Hexo    </p>
-<p>####安装hexo<br>    命令行: npm install hexo-cli -g<br>    新建一个文件夹命名 Hexo<br>    在此文件夹中右键打开Git Bash<br>    hexo init<br>    npm install server –save<br>    输入 hexo server -p5000<br>    打开<a href="http://localhost:5000" target="_blank" rel="external">http://localhost:5000</a> PS:如果打不开可以换一个端口号<br>    打开Hexo目录下的_config.yml<br>   deploy下面配置如下:<br>   type: git<br>   repository: git@github.com:username/创建仓库时输入的名称.github.io.git<br>   branch: master</p>
-<p>####部署<br>    hexo clean<br>    hexo g<br>    npm install hexo-deployer –save<br>    hexo d<br>    此时就可以打开github系统 Settings 下面的网址查看成果</p>
-<p>###Hexo主题更换<br>    在Hexo下打开GitBash输入:<br>    git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>    将Hexo目录下的_config.yml theme后面改成 next</p>
+<p>###Hexo    ###</p>
+<p>####安装hexo ####<br>    命令行: npm install hexo-cli -g<br>    新建一个文件夹命名 Hexo<br>    在此文件夹中右键打开Git Bash<br>    hexo init<br>    npm install server –save<br>    输入 hexo server -p5000<br>    打开<a href="http://localhost:5000" target="_blank" rel="external">http://localhost:5000</a> PS:如果打不开可以换一个端口号<br>    打开Hexo目录下的_config.yml<br>   deploy下面配置如下:<br>   type: git<br>   repository: git@github.com:username/创建仓库时输入的名称.github.io.git<br>   branch: master</p>
+<p>####部署    ####<br>    hexo clean<br>    hexo g<br>    npm install hexo-deployer –save<br>    hexo d<br>    此时就可以打开github系统 Settings 下面的网址查看成果</p>
+<p>###Hexo主题更换####<br>    在Hexo下打开GitBash输入:<br>    git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>    将Hexo目录下的_config.yml theme后面改成 next</p>
 <pre><code>hexo clean
 hexo g
 hexo d
@@ -379,136 +406,16 @@ hexo new page &quot;categories&quot;
 打开Hexo目录的Source 在categories下的index.md配置如下
 ---
 title: 分类
-type: &quot;tags&quot;
+type: &quot;categories&quot;
 comments: false
 ---
 在tags下的index.md配置如下
 ---
 title: 标签
-type: &quot;categories&quot;
+type: &quot;tags&quot;
 comments: false
 ---
 </code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://apescsyforcode.github.io/aapescsyforcode.github.io/aapescsyforcode.github.io/2017/07/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈思源">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/aapescsyforcode.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旧梦">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/aapescsyforcode.github.io/2017/07/01/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T22:43:37+08:00">
-                2017-07-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
           
         
       
@@ -587,7 +494,7 @@ comments: false
           
             <div class="site-state-item site-state-posts">
               <a href="/aapescsyforcode.github.io/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -597,7 +504,7 @@ comments: false
             
             
             <div class="site-state-item site-state-categories">
-              <a href="/aapescsyforcode.github.io/tags/index.html">
+              <a href="/aapescsyforcode.github.io/categories/index.html">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -608,7 +515,7 @@ comments: false
             
             
             <div class="site-state-item site-state-tags">
-              <a href="/aapescsyforcode.github.io/categories/index.html">
+              <a href="/aapescsyforcode.github.io/tags/index.html">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
               </a>
