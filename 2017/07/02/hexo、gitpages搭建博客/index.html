@@ -100,7 +100,7 @@
 <meta property="og:url" content="https://apescsyforcode.github.io/aapescsyforcode.github.io/2017/07/02/hexo、gitpages搭建博客/index.html">
 <meta property="og:site_name" content="旧梦">
 <meta property="og:description" content="gitpages创建打开github官网 注册github账号 建立Repository  PS:命名规范为     用户名.github.io 打开所建项目点击Settings 将Github Pages下面的Source选择为master branch 并点击Save 软件安装GitBash https://git-scm.com/downloads NodeJs https://nodejs">
-<meta property="og:updated_time" content="2017-07-02T05:49:08.710Z">
+<meta property="og:updated_time" content="2017-07-02T05:57:01.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo、gitpages搭建博客">
 <meta name="twitter:description" content="gitpages创建打开github官网 注册github账号 建立Repository  PS:命名规范为     用户名.github.io 打开所建项目点击Settings 将Github Pages下面的Source选择为master branch 并点击Save 软件安装GitBash https://git-scm.com/downloads NodeJs https://nodejs">
@@ -362,12 +362,10 @@
 https://git-scm.com/downloads
 NodeJs
 https://nodejs.org/en/    
-</code></pre><h3 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h3><p>####检查现有ssh key：####</p>
-<pre><code>打开命令行输入:
+</code></pre><h3 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h3><h4 id="检查现有ssh-key："><a href="#检查现有ssh-key：" class="headerlink" title="检查现有ssh key："></a>检查现有ssh key：</h4><pre><code>打开命令行输入:
 cd ~/. ssh 检查本机的ssh密钥
 如果提示：No such file or directory 说明你是第一次使用git。
-</code></pre><p>####生成新的SSH Key：####</p>
-<pre><code> ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;
+</code></pre><h4 id="生成新的SSH-Key："><a href="#生成新的SSH-Key：" class="headerlink" title="生成新的SSH Key："></a>生成新的SSH Key：</h4><pre><code> ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;
 效果如下:
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;
@@ -375,21 +373,37 @@ Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt
 Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;
 Enter same passphrase again:&lt;再次输入加密串&gt;
 PS：输入的时候在界面上不会显示*,此密码用作提交项目时输入
-</code></pre><p>####添加SSH Key到github：####</p>
-<pre><code>打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件
+</code></pre><h4 id="添加SSH-Key到github："><a href="#添加SSH-Key到github：" class="headerlink" title="添加SSH Key到github："></a>添加SSH Key到github：</h4><pre><code>打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件
 如果看不到可以点开此电脑-&gt;查看-&gt;勾选隐藏项目
 此电脑-&gt;查看-&gt;选项-&gt;查看：显示隐藏文件
 取消隐藏受保护的文件
 右击Documents and Settings-&gt;属性-&gt;安全-&gt;高级-&gt;修改权限-&gt;勾选Everyone完全控制
 
 复制私人密钥到github系统中的Account Settings---&gt;SSH Public keys ---&gt; add another public keys key文本框中并点击Add Key
-</code></pre><p>####测试####<br>    命令行中输入ssh -T git@github.com<br>    输入yes以及用户名密码</p>
-<p>####设置用户信息<br>    git config –global user.name “cnfeat”//用户名,该名字是提交项目时记录的名字<br>    git config –global user.email  “cnfeat@gmail.com”//填写自己的邮箱<br>    PS:必须为英文，如果失败则输入 git init</p>
-<p>###Hexo    ###</p>
-<p>####安装hexo ####<br>    命令行: npm install hexo-cli -g<br>    新建一个文件夹命名 Hexo<br>    在此文件夹中右键打开Git Bash<br>    hexo init<br>    npm install server –save<br>    输入 hexo server -p5000<br>    打开<a href="http://localhost:5000" target="_blank" rel="external">http://localhost:5000</a> PS:如果打不开可以换一个端口号<br>    打开Hexo目录下的_config.yml<br>   deploy下面配置如下:<br>   type: git<br>   repository: git@github.com:username/创建仓库时输入的名称.github.io.git<br>   branch: master</p>
-<p>####部署    ####<br>    hexo clean<br>    hexo g<br>    npm install hexo-deployer –save<br>    hexo d<br>    此时就可以打开github系统 Settings 下面的网址查看成果</p>
-<p>###Hexo主题更换####<br>    在Hexo下打开GitBash输入:<br>    git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>    将Hexo目录下的_config.yml theme后面改成 next</p>
-<pre><code>hexo clean
+</code></pre><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><pre><code>命令行中输入ssh -T git@github.com
+输入yes以及用户名密码
+</code></pre><h4 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h4><pre><code>git config --global user.name &quot;cnfeat&quot;//用户名,该名字是提交项目时记录的名字
+git config --global user.email  &quot;cnfeat@gmail.com&quot;//填写自己的邮箱
+PS:必须为英文，如果失败则输入 git init
+</code></pre><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><pre><code>命令行: npm install hexo-cli -g
+新建一个文件夹命名 Hexo
+在此文件夹中右键打开Git Bash
+hexo init
+npm install server --save
+输入 hexo server -p5000 
+打开http://localhost:5000 PS:如果打不开可以换一个端口号
+打开Hexo目录下的_config.yml
+</code></pre><p>   deploy下面配置如下:<br>   type: git<br>   repository: git@github.com:username/创建仓库时输入的名称.github.io.git<br>   branch: master</p>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><pre><code>hexo clean
+hexo g
+npm install hexo-deployer --save
+hexo d
+此时就可以打开github系统 Settings 下面的网址查看成果
+</code></pre><h4 id="Hexo主题更换"><a href="#Hexo主题更换" class="headerlink" title="Hexo主题更换"></a>Hexo主题更换</h4><pre><code>在Hexo下打开GitBash输入:
+git clone https://github.com/iissnan/hexo-theme-next themes/next
+将Hexo目录下的_config.yml theme后面改成 next
+
+hexo clean
 hexo g
 hexo d
 此时就更换完成了
@@ -574,7 +588,7 @@ comments: false
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitpages创建"><span class="nav-number">1.</span> <span class="nav-text">gitpages创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件安装"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH-keys"><span class="nav-number">3.</span> <span class="nav-text">配置SSH keys</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitpages创建"><span class="nav-number">1.</span> <span class="nav-text">gitpages创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件安装"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH-keys"><span class="nav-number">3.</span> <span class="nav-text">配置SSH keys</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查现有ssh-key："><span class="nav-number">3.1.</span> <span class="nav-text">检查现有ssh key：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成新的SSH-Key："><span class="nav-number">3.2.</span> <span class="nav-text">生成新的SSH Key：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加SSH-Key到github："><span class="nav-number">3.3.</span> <span class="nav-text">添加SSH Key到github：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试"><span class="nav-number">3.4.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置用户信息"><span class="nav-number">3.5.</span> <span class="nav-text">设置用户信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">4.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">4.2.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo主题更换"><span class="nav-number">4.3.</span> <span class="nav-text">Hexo主题更换</span></a></li></ol></li></ol></div>
             
 
           </div>
