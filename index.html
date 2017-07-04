@@ -266,6 +266,176 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://apescsyforcode.github.io/aapescsyforcode.github.io/aapescsyforcode.github.io/2017/07/04/一日之记（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈思源">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/aapescsyforcode.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旧梦">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aapescsyforcode.github.io/2017/07/04/一日之记（一）/" itemprop="url">一日之记（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T20:13:13+08:00">
+                2017-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/aapescsyforcode.github.io/categories/日记/" itemprop="url" rel="index">
+                    <span itemprop="name">日记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="MFC-之ComboBox的使用"><a href="#MFC-之ComboBox的使用" class="headerlink" title="MFC 之ComboBox的使用"></a>MFC 之ComboBox的使用</h3><pre><code>CComboBox * pComboBox =(CComboBox *)GetDlgItem(ID_ComboBox);
+插入数据pComboBox-&gt;InsertString(index,_T());
+当index 为0时 按照插入顺序，越后插入的index越低
+index为-1时，则是插入列表的末尾
+pComboBox-&gt;AddString 则按照英文字典顺序由上到下排列
+VS2005中 将type改为sample 为编辑框,dropdown为可编辑下拉框,dropList为不可编辑下拉框
+pComboBox-&gt;getWindowText(strText)  获取当前内容到strText中
+pComboBox-&gt;SetWindowText(strText)  将strText设为当前内容
+int index =pComboBox-&gt;getCurSel()  返回被选中项的索引
+pComboBox-&gt;SetCurSel(index) 设置当前内容为索引index的内容
+
+
+    lStyle &amp;= ~LVS_TYPEMASK; // 清除显示方式位 
+lStyle |= LVS_REPORT; // 设置style 
+SetWindowLong(m_list.m_hWnd, GWL_STYLE, lStyle);// 设置style 
+DWORD dwStyle = m_list.GetExtendedStyle(); 
+dwStyle |= LVS_EX_FULLROWSELECT;// 选中某行使整行高亮（只适用与report 风格的listctrl ） 
+dwStyle |= LVS_EX_GRIDLINES;// 网格线（只适用与report 风格的listctrl ） 
+dwStyle |= LVS_EX_CHECKBOXES;//item 前生成checkbox 控件 
+m_list.SetExtendedStyle(dwStyle); // 设置扩展风格
+m_list.InsertColumn(0,_T(&quot;账单号&quot;),LVCFMT_LEFT,80);
+</code></pre><h3 id="MFC之ListControl-用法"><a href="#MFC之ListControl-用法" class="headerlink" title="MFC之ListControl 用法"></a>MFC之ListControl 用法</h3><pre><code>lStyle |= LVS_REPORT; // 设置style 
+SetWindowLong(m_list.m_hWnd, GWL_STYLE, lStyle);// 设置style 
+DWORD dwStyle = m_list.GetExtendedStyle(); 
+dwStyle |= LVS_EX_FULLROWSELECT;// 选中某行使整行高亮（只适用与report 风格的listctrl ） 
+dwStyle |= LVS_EX_GRIDLINES;// 网格线（只适用与report 风格的listctrl ） 
+dwStyle |= LVS_EX_CHECKBOXES;//item 前生成checkbox 控件 
+m_list.SetExtendedStyle(dwStyle); // 设置扩展风格
+m_list.InsertColumn(0,_T(&quot;账单号&quot;),LVCFMT_LEFT,80);
+</code></pre><h3 id="Map用法"><a href="#Map用法" class="headerlink" title="Map用法"></a>Map用法</h3><pre><code>map.clear() 使用前 应判断 map.size() 否则会崩溃
+map.count(key)  判断key是否有对应的值
+map[key] =value 赋值
+在insert插入的同时，还有返回值来说明是否插入成功，就是pair&lt; map&lt;string,int&gt;::iterator,bool&gt; &gt;
+map.insert(make_pair(key,value)) 
+rent= m_map.insert(make_pair(&quot;hello&quot;,5)）;
+rent-&gt;second即是成功与否的标志；rent-&gt;first就是返回的map&lt;string,int&gt;::iterator迭代器；rent-&gt;first.first就是string类型的数据。
+</code></pre><h3 id="CArray用法"><a href="#CArray用法" class="headerlink" title="CArray用法　"></a>CArray用法　</h3><pre><code>类似Ｃ语言的数组
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://apescsyforcode.github.io/aapescsyforcode.github.io/aapescsyforcode.github.io/2017/07/02/linux上github使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -568,6 +738,8 @@ hexo d
 </code></pre><h4 id="Hexo主题更换"><a href="#Hexo主题更换" class="headerlink" title="Hexo主题更换"></a>Hexo主题更换</h4><pre><code>在Hexo下打开GitBash输入:
 git clone https://github.com/iissnan/hexo-theme-next themes/next
 将Hexo目录下的_config.yml theme后面改成 next
+将url改成域名最后一个/前面的部分
+root改成域名最后一个/及后面的部分
 
 hexo clean
 hexo g
@@ -670,7 +842,7 @@ comments: false
           
             <div class="site-state-item site-state-posts">
               <a href="/aapescsyforcode.github.io/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -681,7 +853,7 @@ comments: false
             
             <div class="site-state-item site-state-categories">
               <a href="/aapescsyforcode.github.io/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
